@@ -1,7 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:todo_app/Screens/signin.dart';
+import 'package:studo/Screens/signin.dart';
 
 class SignUp extends StatelessWidget {
   @override

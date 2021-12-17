@@ -5,9 +5,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:todo_app/Screens/calenderview.dart';
-import 'package:todo_app/Screens/homepage.dart';
-import 'package:todo_app/Screens/signin.dart';
+import 'package:studo/Screens/calenderview.dart';
+import 'package:studo/Screens/homepage.dart';
+import 'package:studo/Screens/signin.dart';
 
 class MyNavPage extends StatefulWidget {
   const MyNavPage({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class _MyNavPageState extends State<MyNavPage> {
   late int _selectedIndex = 0;
   static final List<Widget> _pages = <Widget>[
     TodoHomePage(),
-    SignIn()
+    Calenderpage()
     //TableRangeExample()
   ];
 
