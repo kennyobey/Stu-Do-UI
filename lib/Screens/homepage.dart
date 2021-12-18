@@ -247,18 +247,7 @@ class _MyTodoHomePage extends State<TodoHomePage> {
                                               fontWeight: FontWeight.bold,
                                               fontSize: 15),
                                         ),
-                                          ListView.builder(
-                                            // itemBuilder: (context, position) {
-                                            //   return Card(
-                                            //     child: Padding(
-                                            //       padding:
-                                            //           const EdgeInsets.all(15.0),
-                                            //       child: Text(
-                                            //         'Today $position',
-                                            //       ),
-                                            //     ),
-                                            //   );
-                                            // },
+                                        ListView.builder(
                                             itemBuilder: (context, position) {
                                               return Card(
                                                 color: Color.fromRGBO(
@@ -300,7 +289,7 @@ class _MyTodoHomePage extends State<TodoHomePage> {
                                             itemCount: 5,
                                           ),
                                         ],
-                                      ),
+                                     ),
                                     ),
                                     // Second Tab View
                                     Container(
