@@ -230,66 +230,78 @@ class _MyTodoHomePage extends State<TodoHomePage> {
                                     ],
                                   ),
                                 ),
-                                SizedBox(height: 10),
+                                SizedBox(height: 5),
                                 Expanded(
                                   child: TabBarView(children: [
                                     // First TAb view
                                     Container(
+                                      padding: EdgeInsets.all(10),
                                       height: 200,
                                       width: 400,
                                       child: Column(
                                         children: [
-                                          Text(
-                                          "Today",
-                                          style: TextStyle(
-                                              color: Color.fromRGBO(
-                                                  25, 50, 80, 10),
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 15),
-                                        ),
-                                        ListView.builder(
-                                            itemBuilder: (context, position) {
-                                              return Card(
-                                                color: Color.fromRGBO(
-                                                    240, 244, 245, 10),
-                                                child: ListTile(
-                                                  contentPadding:
-                                                      EdgeInsets.all(10),
-                                                  leading: Image.asset(
-                                                    "asset/Rectangle blue.png",
-                                                    height: 90,
-                                                    width: 10,
-                                                    fit: BoxFit.fill,
-                                                  ),
-                                                  title: Text(
-                                                    _item[position].title,
-                                                    style: TextStyle(
-                                                      fontSize: 15,
-                                                      fontWeight: FontWeight.bold,
-                                                      color: Color.fromRGBO(
-                                                          25, 50, 80, 10),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                "Today",
+                                                style: TextStyle(
+                                                    color: Color.fromRGBO(
+                                                        25, 50, 80, 10),
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 15),
+                                              ),
+                                              ListView.builder(
+                                                scrollDirection: Axis.vertical,
+                                                shrinkWrap: true,
+                                                itemBuilder:
+                                                    (context, position) {
+                                                  return Card(
+                                                    color: Color.fromRGBO(
+                                                        240, 244, 245, 10),
+                                                    child: ListTile(
+                                                      contentPadding:
+                                                          EdgeInsets.all(10),
+                                                      leading: Image.asset(
+                                                        "asset/Rectangle blue.png",
+                                                        height: 90,
+                                                        width: 10,
+                                                        fit: BoxFit.fill,
+                                                      ),
+                                                      title: Text(
+                                                        _item[position].title,
+                                                        style: TextStyle(
+                                                          fontSize: 15,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          color: Color.fromRGBO(
+                                                              25, 50, 80, 10),
+                                                        ),
+                                                      ),
+                                                      subtitle: Text(
+                                                        _item[position].date,
+                                                        style: TextStyle(
+                                                          fontSize: 10,
+                                                          fontWeight:
+                                                              FontWeight.w300,
+                                                          color: Color.fromRGBO(
+                                                              25, 50, 80, 10),
+                                                        ),
+                                                      ),
+                                                      trailing: Icon(
+                                                        Icons.circle,
+                                                        color: Colors.yellow,
+                                                      ),
                                                     ),
-                                                  ),
-                                                  subtitle: Text(
-                                                    _item[position].date,
-                                                    style: TextStyle(
-                                                      fontSize: 10,
-                                                      fontWeight: FontWeight.w300,
-                                                      color: Color.fromRGBO(
-                                                          25, 50, 80, 10),
-                                                    ),
-                                                  ),
-                                                  trailing: Icon(
-                                                    Icons.circle,
-                                                    color: Colors.yellow,
-                                                  ),
-                                                ),
-                                              );
-                                            },
-                                            itemCount: 5,
+                                                  );
+                                                },
+                                                itemCount: 2,
+                                              ),
+                                            ],
                                           ),
                                         ],
-                                     ),
+                                      ),
                                     ),
                                     // Second Tab View
                                     Container(
@@ -348,7 +360,7 @@ class _MyTodoHomePage extends State<TodoHomePage> {
                                         itemCount: 5,
                                       ),
                                     ),
-                                          // Third Tab View
+                                    // Third Tab View
                                     Container(
                                       height: 200,
                                       width: 400,
