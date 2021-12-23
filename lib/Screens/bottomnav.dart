@@ -5,6 +5,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:studo/Screens/Alet%20dialogue/alertdialogue.dart';
 import 'package:studo/Screens/calenderview.dart';
 import 'package:studo/Screens/homepage.dart';
 import 'package:studo/Screens/signin.dart';
@@ -38,7 +39,17 @@ class _MyNavPageState extends State<MyNavPage> {
         elevation: 1,
             child: Icon(Icons.add),
             backgroundColor: Color.fromRGBO(25, 50, 80, 1),
-            onPressed: () {}),
+            onPressed: (){
+              showDialog(context: context,
+                builder: (BuildContext context){
+                return CustomDialogBox(
+                  title: "Custom Dialog Demo",
+                  descriptions: "Hii all this is a custom dialog in flutter and  you will be use in your flutter applications",
+                  text: "Yes",
+                );
+                }
+              );
+            },),
         backgroundColor: Color.fromRGBO(25,50,80,10,),
         body: Center(child: _pages.elementAt(_selectedIndex)),
         bottomNavigationBar: BottomNavigationBar(

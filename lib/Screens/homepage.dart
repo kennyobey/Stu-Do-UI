@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
+import 'package:studo/Screens/Alet%20dialogue/constant.dart';
 import 'package:studo/Screens/drawer.dart';
 import 'package:studo/Screens/signin.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -24,6 +25,7 @@ class _MyTodoHomePage extends State<TodoHomePage> {
     return DefaultTabController(
         length: 3,
         child: Scaffold(
+            resizeToAvoidBottomInset: true,
             appBar: AppBar(
               elevation: 0,
               title: Text(""),
@@ -53,10 +55,15 @@ class _MyTodoHomePage extends State<TodoHomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      margin: EdgeInsets.all(100.0),
-                      decoration: BoxDecoration(
-                          color: Colors.orange, shape: BoxShape.circle),
-                    ),
+                        child: CircleAvatar(
+                          backgroundColor: Colors.transparent,
+                          radius: Constants.avatarRadius,
+                          child: ClipRRect(
+                              borderRadius: BorderRadius.all(
+                                  Radius.circular(Constants.avatarRadius)),
+                              child: Image.asset("asset/studosreen.png")),
+                        ),
+                      ),
                     SizedBox(
                       height: 20,
                     ),
@@ -145,7 +152,7 @@ class _MyTodoHomePage extends State<TodoHomePage> {
             ),
 
             // End of Drawer
-            resizeToAvoidBottomInset: false,
+            //resizeToAvoidBottomInset: false,
             body: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(color: Color.fromRGBO(25, 50, 80, 1)),
@@ -186,7 +193,7 @@ class _MyTodoHomePage extends State<TodoHomePage> {
                       ), // padding
                       Expanded(
                           child: Container(
-                              padding: EdgeInsets.all(10),
+                              padding: EdgeInsets.all(3),
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.only(
