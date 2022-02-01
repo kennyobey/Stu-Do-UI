@@ -94,23 +94,15 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                 ),
                 Container(
                     padding: EdgeInsets.all(10),
-                    child: Column(children: [
-                      Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              height: 16,
-                            ),
-                            TextField(
-                              decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                labelText: 'Even Densed TextFiled',
-                                isDense: true, // Added this
-                                contentPadding: EdgeInsets.all(8), // Added this
-                              ),
-                            ),
-                          ])
-                    ])),
+                    child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          _button("Low"),
+                          Spacer(),
+                          _button("Medium"),
+                          Spacer(),
+                          _button("High")
+                        ])),
                 Container(
                   padding: EdgeInsets.all(10),
                   height: 200,
@@ -126,8 +118,6 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                             _button("Low"),
                             Spacer(),
                             _button("Medium"),
-                            Spacer(),
-                            _button("High")
                           ]),
                     ],
                   ),
