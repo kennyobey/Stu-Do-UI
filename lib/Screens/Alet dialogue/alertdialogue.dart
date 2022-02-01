@@ -39,13 +39,14 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
             child: Scaffold(
               resizeToAvoidBottomInset: true,
               appBar: AppBar(
+                backgroundColor: Color.fromRGBO(25, 50, 80, 10),
                 bottom: TabBar(
                   tabs: [
                     Tab(
                       child: Text(
                         "Details",
                         style: TextStyle(
-                            color: Color.fromRGBO(25, 50, 80, 10),
+                            color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 15),
                       ),
@@ -54,7 +55,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                       child: Text(
                         "Tags",
                         style: TextStyle(
-                            color: Color.fromRGBO(25, 50, 80, 10),
+                            color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 15),
                       ),
@@ -63,7 +64,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                       child: Text(
                         "Deadline",
                         style: TextStyle(
-                            color: Color.fromRGBO(25, 50, 80, 10),
+                            color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 15),
                       ),
@@ -73,6 +74,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
               ),
               body: TabBarView(children: [
                 Container(
+                  padding: EdgeInsets.all(10),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -84,7 +86,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                             border: OutlineInputBorder(),
                             labelText: 'Title',
                             isDense: true, // Added this
-                            contentPadding: EdgeInsets.all(20), // Added this
+                            contentPadding: EdgeInsets.all(8), // Added this
                           ),
                         ),
                         _buildTextField()
@@ -118,134 +120,25 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                       SizedBox(
                         height: 16,
                       ),
-                      Column(
+                      Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            TextField(
-                              decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                labelText: 'Even Densed TextFiled',
-                                isDense: true, // Added this
-                                contentPadding: EdgeInsets.all(8), // Added this
-                              ),
-                            ),
+                            _button("Low"),
+                            Spacer(),
+                            _button("Medium"),
+                            Spacer(),
+                            _button("High")
                           ]),
                     ],
                   ),
                 ),
               ]),
             )));
-
-    //  Stack(
-    //   children: <Widget>[
-    //     Container(
-    //       padding: EdgeInsets.only(left: Constants.padding,top: Constants.avatarRadius
-    //           + Constants.padding, right: Constants.padding,bottom: Constants.padding
-    //       ),
-    //       margin: EdgeInsets.only(top: Constants.avatarRadius),
-    //       decoration: BoxDecoration(
-    //         shape: BoxShape.rectangle,
-    //         color: Colors.white,
-    //         borderRadius: BorderRadius.circular(Constants.padding),
-    //         boxShadow: [
-    //           BoxShadow(color: Colors.black,offset: Offset(0,5),
-    //           blurRadius: 5
-    //           ),
-    //         ]
-    //       ),
-    //       child: Column(
-    //         mainAxisSize: MainAxisSize.min,
-    //         children: <Widget>[
-    //           Row(
-    //           children: [
-    //           Container(
-    //           margin: EdgeInsets.all(3),
-    //           child: FlatButton(
-    //             child: Text('Details', style: TextStyle(fontSize: 15.0),),
-    //             color: Color.fromRGBO(25, 50, 80, 1),
-    //             textColor: Colors.white,
-    //             onPressed: () {},
-    //           ),
-    //         ),
-    //         Container(
-
-    //           margin: EdgeInsets.all(3),
-    //           child: FlatButton(
-    //             child: Text('Tags', style: TextStyle(fontSize: 15.0),),
-    //             color: Color.fromRGBO(25, 50, 80, 1),
-    //             textColor: Colors.white,
-    //             onPressed: () {},
-    //           ),
-    //         ),
-    //         Container(
-    //           margin: EdgeInsets.all(3),
-    //           child: FlatButton(
-    //             child: Text('Deadline', style: TextStyle(fontSize: 15.0),),
-    //             color: Color.fromRGBO(25, 50, 80, 1),
-    //             textColor: Colors.white,
-    //             onPressed: () {},
-    //           ),
-    //         ),
-
-    //         ],),
-    //           TextFormField(
-    //               decoration: InputDecoration(
-    //                 labelText: 'Title',
-    //                 labelStyle: TextStyle(
-    //                     fontFamily: 'Montserrat',
-    //                     fontWeight: FontWeight.bold,
-    //                     color: Colors.grey,
-    //                     fontSize: 15),
-    //                 focusedBorder: UnderlineInputBorder(
-    //                     borderSide: BorderSide(color: Color.fromRGBO(25, 50, 80, 1),)),
-    //               ),
-    //               onChanged: (text){
-    //                  // var name = text;
-    //               },
-    //             ),
-    //             TextFormField(
-    //               decoration: InputDecoration(
-    //                 labelText: 'Description',
-    //                 labelStyle: TextStyle(
-    //                     fontFamily: 'Montserrat',
-    //                     fontWeight: FontWeight.bold,
-    //                     color: Colors.grey,
-    //                     fontSize: 15),
-    //                 focusedBorder: UnderlineInputBorder(
-    //                     borderSide: BorderSide(color: Color.fromRGBO(25, 50, 80, 1),)),
-    //               ),
-    //               onChanged: (text){
-    //                  // var name = text;
-    //               },
-    //             ),
-    //             Align(
-    //             alignment: Alignment.bottomLeft,
-    //             child: FlatButton(
-    //                 onPressed: (){
-    //                   Navigator.of(context).pop();
-    //                 },
-    //                 child: Text("Submit", style: TextStyle(fontSize: 18),)),
-    //           ),
-
-    //           Align(
-    //             alignment: Alignment.bottomRight,
-    //             child: FlatButton(
-    //                 onPressed: (){
-    //                   Navigator.of(context).pop();
-    //                 },
-    //                 child: Text("Submit", style: TextStyle(fontSize: 18),)),
-    //           ),
-    //         ],
-    //       ),
-    //     ),
-
-    //   ],
-    // );
   }
 }
 
 Widget _buildTextField() {
-  final maxLines = 5;
+  const maxLines = 5;
 
   return Container(
     margin: EdgeInsets.all(12),
@@ -253,10 +146,25 @@ Widget _buildTextField() {
     child: TextField(
       maxLines: maxLines,
       decoration: InputDecoration(
-        hintText: "Enter a message",
-        fillColor: Colors.grey[300],
-        filled: true,
+        border: OutlineInputBorder(),
+        labelText: 'Even Densed TextFiled',
+        isDense: true, // Added this
+        contentPadding: EdgeInsets.all(8), // Added this
       ),
     ),
   );
+}
+
+Widget _button(String title) {
+  return Container(
+      margin: EdgeInsets.all(25),
+      child: FlatButton(
+        child: Text(
+          title,
+          style: TextStyle(fontSize: 20.0),
+        ),
+        color: Colors.red,
+        textColor: Colors.white,
+        onPressed: () {},
+      ));
 }
