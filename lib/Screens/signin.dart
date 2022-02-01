@@ -1,8 +1,8 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:studo/Screens/bottomnav.dart';
 import 'package:studo/Screens/homepage.dart';
-
 
 class SignIn extends StatelessWidget {
   @override
@@ -141,7 +141,7 @@ Widget signup(BuildContext context) {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => TodoHomePage()),
+              MaterialPageRoute(builder: (context) => MyNavPage()),
             );
           },
           child: InkWell(

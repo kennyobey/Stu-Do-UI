@@ -5,7 +5,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:studo/Screens/bottomnav.dart';
 import 'package:studo/Screens/homepage.dart';
-
+import 'package:studo/Screens/signup.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
@@ -14,10 +14,7 @@ class Splash extends StatefulWidget {
   VideoState createState() => VideoState();
 }
 
-
-
-class VideoState extends State<Splash> with SingleTickerProviderStateMixin{
-
+class VideoState extends State<Splash> with SingleTickerProviderStateMixin {
   var _visible = true;
 
   late AnimationController animationController;
@@ -29,20 +26,18 @@ class VideoState extends State<Splash> with SingleTickerProviderStateMixin{
   }
 
   void navigationPage() {
-    Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => MyNavPage()));
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => SignUp()));
   }
 
   @override
   void initState() {
     super.initState();
 
-
-
-    animationController =  AnimationController(
-        vsync: this, duration:Duration(seconds: 1));
+    animationController =
+        AnimationController(vsync: this, duration: Duration(seconds: 1));
     animation =
-    CurvedAnimation(parent: animationController, curve: Curves.easeOut);
+        CurvedAnimation(parent: animationController, curve: Curves.easeOut);
 
     // ignore: unnecessary_this
     animation.addListener(() => this.setState(() {}));
@@ -56,7 +51,6 @@ class VideoState extends State<Splash> with SingleTickerProviderStateMixin{
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -66,10 +60,15 @@ class VideoState extends State<Splash> with SingleTickerProviderStateMixin{
             mainAxisAlignment: MainAxisAlignment.end,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-
-              Padding(padding: EdgeInsets.only(bottom: 30.0),child:Image.asset('asset/studosreen.png',height: 25.0,fit: BoxFit.scaleDown,))
-
-            ],),
+              Padding(
+                  padding: EdgeInsets.only(bottom: 30.0),
+                  child: Image.asset(
+                    'asset/studosreen.png',
+                    height: 25.0,
+                    fit: BoxFit.scaleDown,
+                  ))
+            ],
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[

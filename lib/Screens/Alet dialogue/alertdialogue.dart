@@ -37,12 +37,37 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
         home: DefaultTabController(
             length: 3,
             child: Scaffold(
+              resizeToAvoidBottomInset: true,
               appBar: AppBar(
                 bottom: TabBar(
                   tabs: [
-                    Tab(icon: Icon(Icons.directions_car)),
-                    Tab(icon: Icon(Icons.directions_transit)),
-                    Tab(icon: Icon(Icons.directions_bike)),
+                    Tab(
+                      child: Text(
+                        "Details",
+                        style: TextStyle(
+                            color: Color.fromRGBO(25, 50, 80, 10),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
+                      ),
+                    ),
+                    Tab(
+                      child: Text(
+                        "Tags",
+                        style: TextStyle(
+                            color: Color.fromRGBO(25, 50, 80, 10),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
+                      ),
+                    ),
+                    Tab(
+                      child: Text(
+                        "Deadline",
+                        style: TextStyle(
+                            color: Color.fromRGBO(25, 50, 80, 10),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -57,11 +82,12 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                         TextField(
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
-                            labelText: 'Even Densed TextFiled',
+                            labelText: 'Title',
                             isDense: true, // Added this
-                            contentPadding: EdgeInsets.all(8), // Added this
+                            contentPadding: EdgeInsets.all(20), // Added this
                           ),
                         ),
+                        _buildTextField()
                       ]),
                 ),
                 Container(
@@ -216,4 +242,21 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
     //   ],
     // );
   }
+}
+
+Widget _buildTextField() {
+  final maxLines = 5;
+
+  return Container(
+    margin: EdgeInsets.all(12),
+    height: maxLines * 24.0,
+    child: TextField(
+      maxLines: maxLines,
+      decoration: InputDecoration(
+        hintText: "Enter a message",
+        fillColor: Colors.grey[300],
+        filled: true,
+      ),
+    ),
+  );
 }
