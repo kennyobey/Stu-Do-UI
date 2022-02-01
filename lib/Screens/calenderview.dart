@@ -2,19 +2,25 @@
 
 import 'package:flutter/material.dart';
 
-class Calenderpage extends StatelessWidget {
+class Calenderpage extends StatefulWidget {
   // final CalendarController _controller = CalendarController();
 
   Calenderpage({Key? key}) : super(key: key);
+
+  @override
+  State<Calenderpage> createState() => _CalenderpageState();
+}
+
+class _CalenderpageState extends State<Calenderpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
           elevation: 0,
-          title: Text(""),
-          backgroundColor: Color.fromRGBO(25, 50, 80, 1),
-          actions: [
+          title: const Text(""),
+          backgroundColor: const Color.fromRGBO(25, 50, 80, 1),
+          actions: const [
             Padding(padding: EdgeInsets.all(8)),
             Icon(
               Icons.search,
@@ -57,15 +63,15 @@ class Calenderpage extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                InkWell(
-                  child: Text('Profile'),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
+                // InkWell(
+                //   child: Text('Profile'),
+                //   onTap: () {
+                //     // Update the state of the app
+                //     // ...
+                //     // Then close the drawer
+                //     Navigator.pop(context);
+                //   },
+                // ),
                 SizedBox(
                   height: 20,
                 ),
@@ -76,15 +82,15 @@ class Calenderpage extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                InkWell(
-                  child: Text('Settings'),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
+                // InkWell(
+                //   child: Text('Settings'),
+                //   onTap: () {
+                //     // Update the state of the app
+                //     // ...
+                //     // Then close the drawer
+                //     Navigator.pop(context);
+                //   },
+                // ),
                 SizedBox(
                   height: 20,
                 ),
@@ -95,15 +101,15 @@ class Calenderpage extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                InkWell(
-                  child: Text('Log Out'),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                    // Then close the drawer
-                    Navigator.pop(context);
-                  },
-                ),
+                // InkWell(
+                //   child: Text('Log Out'),
+                //   onTap: () {
+                //     // Update the state of the app
+                //     // ...
+                //     // Then close the drawer
+                //     Navigator.pop(context);
+                //   },
+                // ),
                 SizedBox(
                   height: 20,
                 ),

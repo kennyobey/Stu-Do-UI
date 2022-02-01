@@ -92,12 +92,11 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                 Container(
                     padding: EdgeInsets.all(10),
                     child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           _button("Low"),
-                          Spacer(),
                           _button("Medium"),
-                          Spacer(),
                           _button("High")
                         ])),
                 Container(
@@ -144,14 +143,13 @@ Widget _buildTextField() {
 
 Widget _button(String title) {
   return Container(
-      margin: EdgeInsets.all(25),
-      child: FlatButton(
-        child: Text(
-          title,
-          style: TextStyle(fontSize: 20.0),
-        ),
-        color: Colors.red,
-        textColor: Colors.white,
-        onPressed: () {},
-      ));
+    margin: EdgeInsets.all(5),
+    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10), color: Colors.red),
+    child: Text(
+      title,
+      style: TextStyle(fontSize: 20.0),
+    ),
+  );
 }
