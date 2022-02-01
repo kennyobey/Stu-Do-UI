@@ -1,10 +1,7 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, sized_box_for_whitespace
-
 import 'package:flutter/material.dart';
-import 'package:studo/Screens/Alet%20dialogue/constant.dart';
-import 'package:studo/Screens/drawer.dart';
-import 'package:studo/Screens/signin.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'Alert_dialogue/constant.dart';
 
 class TodoHomePage extends StatefulWidget {
   @override
@@ -55,15 +52,15 @@ class _MyTodoHomePage extends State<TodoHomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                        child: CircleAvatar(
-                          backgroundColor: Colors.transparent,
-                          radius: Constants.avatarRadius,
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.all(
-                                  Radius.circular(Constants.avatarRadius)),
-                              child: Image.asset("asset/studosreen.png")),
-                        ),
+                      child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: Constants.avatarRadius,
+                        child: ClipRRect(
+                            borderRadius: BorderRadius.all(
+                                Radius.circular(Constants.avatarRadius)),
+                            child: Image.asset("asset/studosreen.png")),
                       ),
+                    ),
                     SizedBox(
                       height: 20,
                     ),

@@ -1,9 +1,6 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, deprecated_member_use, prefer_const_constructors_in_immutables
-
-import 'dart:ui';
-//import 'package:custom_dialog_flutter_demo/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:studo/Screens/Alet%20dialogue/constant.dart';
+
+import 'constant.dart';
 
 class CustomDialogBox extends StatefulWidget {
   final String title, descriptions, text;

@@ -1,11 +1,9 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:studo/Screens/Alet%20dialogue/constant.dart';
-import 'package:table_calendar/table_calendar.dart';
 
 class Calenderpage extends StatelessWidget {
-  final CalendarController _controller = CalendarController();
+  // final CalendarController _controller = CalendarController();
 
   Calenderpage({Key? key}) : super(key: key);
   @override
@@ -34,110 +32,110 @@ class Calenderpage extends StatelessWidget {
           ],
         ),
         drawer: Drawer(
-              child: Container(
-                padding: EdgeInsets.all(15),
-                child: Column(
+          child: Container(
+            padding: EdgeInsets.all(15),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Container(
+                //     child: CircleAvatar(
+                //       backgroundColor: Colors.transparent,
+                //       radius: Constants.avatarRadius,
+                //       child: ClipRRect(
+                //           borderRadius: BorderRadius.all(
+                //               Radius.circular(Constants.avatarRadius)),
+                //           child: Image.asset("asset/studosreen.png")),
+                //     ),
+                //   ),
+                SizedBox(
+                  height: 20,
+                ),
+                Divider(
+                  thickness: 2,
+                  height: 2,
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                InkWell(
+                  child: Text('Profile'),
+                  onTap: () {
+                    // Update the state of the app
+                    // ...
+                    // Then close the drawer
+                    Navigator.pop(context);
+                  },
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Divider(
+                  thickness: 2,
+                  height: 2,
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                InkWell(
+                  child: Text('Settings'),
+                  onTap: () {
+                    // Update the state of the app
+                    // ...
+                    // Then close the drawer
+                    Navigator.pop(context);
+                  },
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Divider(
+                  thickness: 2,
+                  height: 2,
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                InkWell(
+                  child: Text('Log Out'),
+                  onTap: () {
+                    // Update the state of the app
+                    // ...
+                    // Then close the drawer
+                    Navigator.pop(context);
+                  },
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Divider(
+                  thickness: 2,
+                  height: 2,
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Spacer(),
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Container(
-                    //     child: CircleAvatar(
-                    //       backgroundColor: Colors.transparent,
-                    //       radius: Constants.avatarRadius,
-                    //       child: ClipRRect(
-                    //           borderRadius: BorderRadius.all(
-                    //               Radius.circular(Constants.avatarRadius)),
-                    //           child: Image.asset("asset/studosreen.png")),
-                    //     ),
-                    //   ),
+                    Text("Help & Feedback"),
                     SizedBox(
                       height: 20,
                     ),
-                    Divider(
-                      thickness: 2,
-                      height: 2,
-                    ),
+                    Text("Term of Use"),
                     SizedBox(
                       height: 20,
                     ),
-                    InkWell(
-                      child: Text('Profile'),
-                      onTap: () {
-                        // Update the state of the app
-                        // ...
-                        // Then close the drawer
-                        Navigator.pop(context);
-                      },
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Divider(
-                      thickness: 2,
-                      height: 2,
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    InkWell(
-                      child: Text('Settings'),
-                      onTap: () {
-                        // Update the state of the app
-                        // ...
-                        // Then close the drawer
-                        Navigator.pop(context);
-                      },
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Divider(
-                      thickness: 2,
-                      height: 2,
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    InkWell(
-                      child: Text('Log Out'),
-                      onTap: () {
-                        // Update the state of the app
-                        // ...
-                        // Then close the drawer
-                        Navigator.pop(context);
-                      },
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Divider(
-                      thickness: 2,
-                      height: 2,
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Spacer(),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Help & Feedback"),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Text("Term of Use"),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Text("Contact")
-                      ],
-                    )
+                    Text("Contact")
                   ],
-                ),
-              ),
+                )
+              ],
             ),
+          ),
+        ),
 
-            // End of Drawer
-            //resizeToAvoidBottomInset: false,
+        // End of Drawer
+        //resizeToAvoidBottomInset: false,
         body: Container(
             width: double.infinity,
             decoration: BoxDecoration(color: Color.fromRGBO(25, 50, 80, 1)),
@@ -191,9 +189,9 @@ class Calenderpage extends StatelessWidget {
                                   SizedBox(
                                     height: 10,
                                   ),
-                                  TableCalendar(
-                                    calendarController: _controller,
-                                  )
+                                  // TableCalendar(
+                                  //   calendarController: _controller,
+                                  // )
                                 ],
                               ),
                             ),
