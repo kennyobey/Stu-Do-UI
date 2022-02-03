@@ -91,7 +91,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [const Text("cancel"), _button("save")],
+                            children: [_button("Cancel"), _button("Save")],
                           )
                         ]),
                   ),
@@ -106,20 +106,41 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                             "Priority",
                             style: TextStyle(
                                 color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
+                                fontWeight: FontWeight.w400,
+                                fontSize: 15),
                           ),
                           const SizedBox(
                             height: 5,
                           ),
                           Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 _button("Low"),
                                 _button("Medium"),
                                 _button("High")
                               ]),
+                          const Text(
+                            "Category",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 15),
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                _button("Low"),
+                              ]),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [_button("Cancel"), _button("Save")],
+                          )
                         ],
                       )),
                 ),
@@ -168,7 +189,7 @@ Widget _buildTextField() {
 Widget _button(String title) {
   return Container(
     margin: const EdgeInsets.all(5),
-    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(10),
       color: const Color.fromRGBO(25, 50, 80, 10),
@@ -176,7 +197,7 @@ Widget _button(String title) {
     child: Text(
       title,
       style: const TextStyle(
-          color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15),
+          color: Colors.white, fontWeight: FontWeight.w400, fontSize: 17),
     ),
   );
 }
