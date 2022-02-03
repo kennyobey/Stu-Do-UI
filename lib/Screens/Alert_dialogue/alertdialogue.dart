@@ -5,7 +5,7 @@ import 'constant.dart';
 class CustomDialogBox extends StatefulWidget {
   final String title, descriptions, text;
 
-  CustomDialogBox(
+  const CustomDialogBox(
       {Key? key,
       required this.title,
       required this.descriptions,
@@ -36,8 +36,8 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
             child: Scaffold(
               resizeToAvoidBottomInset: true,
               appBar: AppBar(
-                backgroundColor: Color.fromRGBO(25, 50, 80, 10),
-                bottom: TabBar(
+                backgroundColor: const Color.fromRGBO(25, 50, 80, 10),
+                bottom: const TabBar(
                   tabs: [
                     Tab(
                       child: Text(
@@ -70,49 +70,73 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                 ),
               ),
               body: TabBarView(children: [
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 16,
-                        ),
-                        TextField(
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Title',
-                            isDense: true, // Added this
-                            contentPadding: EdgeInsets.all(8), // Added this
-                          ),
-                        ),
-                        _buildTextField()
-                      ]),
-                ),
-                Container(
-                    padding: EdgeInsets.all(10),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                SingleChildScrollView(
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          _button("Low"),
-                          _button("Medium"),
-                          _button("High")
-                        ])),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          const TextField(
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: 'Title',
+                              isDense: true, // Added this
+                              contentPadding: EdgeInsets.all(8), // Added this
+                            ),
+                          ),
+                          _buildTextField(),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [const Text("cancel"), _button("save")],
+                          )
+                        ]),
+                  ),
+                ),
+                SingleChildScrollView(
+                  child: Container(
+                      padding: const EdgeInsets.all(10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "Priority",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20),
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                _button("Low"),
+                                _button("Medium"),
+                                _button("High")
+                              ]),
+                        ],
+                      )),
+                ),
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   height: 200,
                   width: 200,
                   child: Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 16,
                       ),
                       Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             _button("Low"),
-                            Spacer(),
+                            const Spacer(),
                             _button("Medium"),
                           ]),
                     ],
@@ -127,13 +151,13 @@ Widget _buildTextField() {
   const maxLines = 5;
 
   return Container(
-    margin: EdgeInsets.all(12),
+    margin: const EdgeInsets.symmetric(vertical: 10),
     height: maxLines * 24.0,
-    child: TextField(
+    child: const TextField(
       maxLines: maxLines,
       decoration: InputDecoration(
         border: OutlineInputBorder(),
-        labelText: 'Even Densed TextFiled',
+        labelText: 'Description',
         isDense: true, // Added this
         contentPadding: EdgeInsets.all(8), // Added this
       ),
@@ -143,13 +167,16 @@ Widget _buildTextField() {
 
 Widget _button(String title) {
   return Container(
-    margin: EdgeInsets.all(5),
-    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+    margin: const EdgeInsets.all(5),
+    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
     decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10), color: Colors.red),
+      borderRadius: BorderRadius.circular(10),
+      color: const Color.fromRGBO(25, 50, 80, 10),
+    ),
     child: Text(
       title,
-      style: TextStyle(fontSize: 20.0),
+      style: const TextStyle(
+          color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15),
     ),
   );
 }
