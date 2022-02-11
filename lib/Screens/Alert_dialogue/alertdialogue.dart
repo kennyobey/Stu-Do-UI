@@ -5,6 +5,16 @@ import 'constant.dart';
 class CustomDialogBox extends StatefulWidget {
   final String title, descriptions, text;
 
+  List<DropdownMenuItem<String>> get dropdownItems {
+    List<DropdownMenuItem<String>> menuItems = [
+      const DropdownMenuItem(child: Text("USA"), value: "USA"),
+      const DropdownMenuItem(child: Text("Canada"), value: "Canada"),
+      const DropdownMenuItem(child: Text("Brazil"), value: "Brazil"),
+      const DropdownMenuItem(child: Text("England"), value: "England"),
+    ];
+    return menuItems;
+  }
+
   const CustomDialogBox(
       {Key? key,
       required this.title,
@@ -17,6 +27,9 @@ class CustomDialogBox extends StatefulWidget {
 }
 
 class _CustomDialogBoxState extends State<CustomDialogBox> {
+  String selectedValue = "USA";
+
+  get dropdownItems => null;
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -69,6 +82,8 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                   ],
                 ),
               ),
+
+              // Details Tab
               body: TabBarView(children: [
                 SingleChildScrollView(
                   child: Container(
@@ -96,6 +111,8 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                         ]),
                   ),
                 ),
+
+                // Tags Tab
                 SingleChildScrollView(
                   child: Container(
                       padding: const EdgeInsets.all(10),
@@ -144,23 +161,34 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                         ],
                       )),
                 ),
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  height: 200,
-                  width: 200,
-                  child: Column(
-                    children: [
-                      const SizedBox(
-                        height: 16,
-                      ),
-                      Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            _button("Low"),
-                            const Spacer(),
-                            _button("Medium"),
-                          ]),
-                    ],
+
+                //Deadline tab
+                SingleChildScrollView(
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    height: 200,
+                    width: 200,
+                    child: Column(
+                      children: [
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              DropdownButton(
+                                  value: selectedValue,
+                                  style: const TextStyle(
+                                      color: Colors.red, fontSize: 30),
+                                  onChanged: (String? newValue) {
+                                    setState(() {
+                                      selectedValue = newValue!;
+                                    });
+                                  },
+                                  items: dropdownItems)
+                            ]),
+                      ],
+                    ),
                   ),
                 ),
               ]),
@@ -170,7 +198,6 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
 
 Widget _buildTextField() {
   const maxLines = 5;
-
   return Container(
     margin: const EdgeInsets.symmetric(vertical: 10),
     height: maxLines * 24.0,
