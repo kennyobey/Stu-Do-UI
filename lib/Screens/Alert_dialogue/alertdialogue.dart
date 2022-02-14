@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 
 import 'constant.dart';
@@ -47,152 +49,170 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
         home: DefaultTabController(
             length: 3,
             child: Scaffold(
-              resizeToAvoidBottomInset: true,
-              appBar: AppBar(
-                backgroundColor: const Color.fromRGBO(25, 50, 80, 10),
-                bottom: const TabBar(
-                  tabs: [
-                    Tab(
-                      child: Text(
-                        "Details",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
+                resizeToAvoidBottomInset: true,
+                appBar: AppBar(
+                  backgroundColor: const Color.fromRGBO(25, 50, 80, 10),
+                  bottom: const TabBar(
+                    tabs: [
+                      Tab(
+                        child: Text(
+                          "Details",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
+                        ),
                       ),
-                    ),
-                    Tab(
-                      child: Text(
-                        "Tags",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
+                      Tab(
+                        child: Text(
+                          "Tags",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
+                        ),
                       ),
-                    ),
-                    Tab(
-                      child: Text(
-                        "Deadline",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-
-              // Details Tab
-              body: TabBarView(children: [
-                SingleChildScrollView(
-                  child: Container(
-                    padding: const EdgeInsets.all(10),
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          const TextField(
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(),
-                              labelText: 'Title',
-                              isDense: true, // Added this
-                              contentPadding: EdgeInsets.all(8), // Added this
-                            ),
-                          ),
-                          _buildTextField(),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [_button("Cancel"), _button("Save")],
-                          )
-                        ]),
+                      Tab(
+                        child: Text(
+                          "Deadline",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
+                        ),
+                      )
+                    ],
                   ),
                 ),
 
-                // Tags Tab
-                SingleChildScrollView(
-                  child: Container(
+                // Details Tab
+                body: TabBarView(children: [
+                  SingleChildScrollView(
+                    child: Container(
                       padding: const EdgeInsets.all(10),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            "Priority",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 15),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                _button("Low"),
-                                _button("Medium"),
-                                _button("High")
-                              ]),
-                          const Text(
-                            "Category",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 15),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                _button("Low"),
-                              ]),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [_button("Cancel"), _button("Save")],
-                          )
-                        ],
-                      )),
-                ),
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            const TextField(
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(),
+                                labelText: 'Title',
+                                isDense: true, // Added this
+                                contentPadding: EdgeInsets.all(8), // Added this
+                              ),
+                            ),
+                            _buildTextField(),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [_button2("Cancel"), _button2("Save")],
+                            )
+                          ]),
+                    ),
+                  ),
 
-                //Deadline tab
-                SingleChildScrollView(
-                  child: Container(
+                  // Tags Tab
+                  SingleChildScrollView(
+                    child: Container(
+                        padding: const EdgeInsets.all(10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              "Priority",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 15),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  _button2("Low"),
+                                  _button2("Medium"),
+                                  _button2("High"),
+                                ]),
+                            const Text(
+                              "Category",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 15),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  _button2("Low"),
+                                ]),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [_button2("Cancel"), _button2("Save")],
+                            )
+                          ],
+                        )),
+                  ),
+
+                  //Deadline tab
+                  SingleChildScrollView(
+                      child: Container(
                     padding: const EdgeInsets.all(10),
                     height: 200,
                     width: 200,
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const SizedBox(
-                          height: 16,
+                          height: 5,
+                        ),
+                        const Text(
+                          "Date",
+                          style: TextStyle(
+                              color: Color.fromRGBO(25, 50, 80, 10),
+                              fontWeight: FontWeight.w400,
+                              fontSize: 15),
                         ),
                         Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              DropdownButton(
-                                  value: selectedValue,
-                                  style: const TextStyle(
-                                      color: Colors.red, fontSize: 30),
-                                  onChanged: (String? newValue) {
-                                    setState(() {
-                                      selectedValue = newValue!;
-                                    });
-                                  },
-                                  items: dropdownItems)
+                              _buttonMonth(),
+                              _buttonDate(),
+                              _buttonYear()
+                            ]),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        const Text(
+                          "Time",
+                          style: TextStyle(
+                              color: Color.fromRGBO(25, 50, 80, 10),
+                              fontWeight: FontWeight.w400,
+                              fontSize: 15),
+                        ),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              _buttonMonth(),
+                              _buttonDate(),
+                              _buttonYear()
                             ]),
                       ],
                     ),
-                  ),
-                ),
-              ]),
-            )));
+                  ))
+                ]))));
   }
 }
 
@@ -213,18 +233,109 @@ Widget _buildTextField() {
   );
 }
 
-Widget _button(String title) {
+Widget _button2(String title) {
   return Container(
-    margin: const EdgeInsets.all(5),
-    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(10),
+    margin: const EdgeInsets.all(2),
+    padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 10),
+    child: FlatButton(
+      child: Text(
+        title,
+        style: const TextStyle(
+            color: Colors.white, fontWeight: FontWeight.w400, fontSize: 15),
+      ),
       color: const Color.fromRGBO(25, 50, 80, 10),
+      textColor: Colors.white,
+      onPressed: () {},
     ),
-    child: Text(
-      title,
-      style: const TextStyle(
-          color: Colors.white, fontWeight: FontWeight.w400, fontSize: 17),
+  );
+}
+
+Widget _buttonMonth() {
+  return Container(
+    margin: const EdgeInsets.all(2),
+    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+    // decoration: BoxDecoration(
+    //     border: Border.all(color: const Color.fromRGBO(25, 50, 80, 10))),
+    child: DropdownButton<String>(
+      items: <String>[
+        'January',
+        'Febuary',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        "September",
+        'Octber',
+        'November',
+        'December'
+      ].map((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+      hint: const Text("August"),
+      onChanged: (_) {},
+    ),
+  );
+}
+
+Widget _buttonDate() {
+  return Container(
+    margin: const EdgeInsets.all(2),
+    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+    // decoration: BoxDecoration(
+    //     border: Border.all(color: const Color.fromRGBO(25, 50, 80, 10))),
+    child: DropdownButton<String>(
+      items: <String>[
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
+        "9",
+        '10',
+        '11',
+        '24'
+      ].map((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+      hint: const Text("24"),
+      onChanged: (_) {},
+    ),
+  );
+}
+
+Widget _buttonYear() {
+  return Container(
+    margin: const EdgeInsets.all(2),
+    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+    // decoration: BoxDecoration(
+    //     border: Border.all(color: const Color.fromRGBO(25, 50, 80, 10))),
+    child: DropdownButton<String>(
+      items: <String>[
+        '2021',
+        '2022',
+        '2023',
+        '2024',
+        '2025',
+        '2026',
+      ].map((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+      hint: const Text("2022"),
+      onChanged: (_) {},
     ),
   );
 }

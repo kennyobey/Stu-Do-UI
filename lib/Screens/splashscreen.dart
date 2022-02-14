@@ -35,7 +35,7 @@ class VideoState extends State<Splash> with SingleTickerProviderStateMixin {
     super.initState();
 
     animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 1));
+        AnimationController(vsync: this, duration: Duration(seconds: 2));
     animation =
         CurvedAnimation(parent: animationController, curve: Curves.easeOut);
 
@@ -59,14 +59,17 @@ class VideoState extends State<Splash> with SingleTickerProviderStateMixin {
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
+            children: const <Widget>[
               Padding(
-                  padding: EdgeInsets.only(bottom: 30.0),
-                  child: Image.asset(
-                    'asset/studosreen.png',
-                    height: 25.0,
-                    fit: BoxFit.scaleDown,
-                  ))
+                padding: EdgeInsets.only(bottom: 30.0),
+                child: Text(
+                  "STUDO",
+                  style: TextStyle(
+                      color: Color.fromRGBO(25, 50, 80, 10),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25),
+                ),
+              )
             ],
           ),
           Column(

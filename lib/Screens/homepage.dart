@@ -17,6 +17,9 @@ class _MyTodoHomePage extends State<TodoHomePage> {
     TaskList("Buy Goceries", "6:00pm", "03/06/21"),
     TaskList("Hello", "12.00 am", "05/05/21"),
     TaskList("Hello", "12.00 am", "04/06/21"),
+    TaskList("Hello", "12.00 am", "04/06/21"),
+    TaskList("Hello", "12.00 am", "04/06/21"),
+    TaskList("Hello", "12.00 am", "04/06/21"),
   ];
 
   @override
@@ -316,7 +319,7 @@ class _MyTodoHomePage extends State<TodoHomePage> {
                                                       ),
                                                     );
                                                   },
-                                                  itemCount: 5,
+                                                  itemCount: _item.length,
                                                 ),
                                               ],
                                             ),
@@ -339,7 +342,7 @@ class _MyTodoHomePage extends State<TodoHomePage> {
                                                       CrossAxisAlignment.start,
                                                   children: [
                                                     Text(
-                                                      "Missing Task",
+                                                      "Missed Task",
                                                       style: TextStyle(
                                                           color: Color.fromRGBO(
                                                               25, 50, 80, 10),
@@ -413,7 +416,7 @@ class _MyTodoHomePage extends State<TodoHomePage> {
                                                           ),
                                                         );
                                                       },
-                                                      itemCount: 5,
+                                                      itemCount: _item.length,
                                                     ),
                                                   ],
                                                 ),
@@ -512,7 +515,7 @@ class _MyTodoHomePage extends State<TodoHomePage> {
                                                           ),
                                                         );
                                                       },
-                                                      itemCount: 5,
+                                                      itemCount: _item.length,
                                                     ),
                                                   ],
                                                 ),
