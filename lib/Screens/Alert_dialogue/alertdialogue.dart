@@ -205,9 +205,9 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              _buttonMonth(),
-                              _buttonDate(),
-                              _buttonYear()
+                              _buttonHour(),
+                              _buttonMin(),
+                              _buttonZone()
                             ]),
                       ],
                     ),
@@ -335,6 +335,80 @@ Widget _buttonYear() {
         );
       }).toList(),
       hint: const Text("2022"),
+      onChanged: (_) {},
+    ),
+  );
+}
+
+Widget _buttonHour() {
+  return Container(
+    margin: const EdgeInsets.all(2),
+    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+    // decoration: BoxDecoration(
+    //     border: Border.all(color: const Color.fromRGBO(25, 50, 80, 10))),
+    child: DropdownButton<String>(
+      items: <String>[
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+      ].map((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+      hint: const Text("04"),
+      onChanged: (_) {},
+    ),
+  );
+}
+
+Widget _buttonMin() {
+  return Container(
+    margin: const EdgeInsets.all(2),
+    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+    // decoration: BoxDecoration(
+    //     border: Border.all(color: const Color.fromRGBO(25, 50, 80, 10))),
+    child: DropdownButton<String>(
+      items: <String>[
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+      ].map((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+      hint: const Text("30"),
+      onChanged: (_) {},
+    ),
+  );
+}
+
+Widget _buttonZone() {
+  return Container(
+    margin: const EdgeInsets.all(2),
+    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+    // decoration: BoxDecoration(
+    //     border: Border.all(color: const Color.fromRGBO(25, 50, 80, 10))),
+    child: DropdownButton<String>(
+      items: <String>[
+        'AM',
+        'PM',
+      ].map((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+      hint: const Text("PM"),
       onChanged: (_) {},
     ),
   );
