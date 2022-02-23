@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:studo/services/repository/auth_repository.dart';
+import 'package:studo/widget/app_colors.dart';
 import 'signup.dart';
 
 class Splash extends StatefulWidget {
@@ -53,20 +54,28 @@ class SplashState extends State<Splash> with SingleTickerProviderStateMixin {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset(
-            'asset/studosreen.png',
-            width: animation.value * 250,
-            height: animation.value * 250,
+          Expanded(
+            flex: 4,
+            child: Center(
+              child: Image.asset(
+                'asset/studosreen.png',
+                width: animation.value * 250,
+                height: animation.value * 250,
+              ),
+            ),
           ),
-          const Text(
-            "STUDO",
-            style: TextStyle(
-                color: Color.fromRGBO(25, 50, 80, 10),
-                fontWeight: FontWeight.bold,
-                fontSize: 25),
+          const Expanded(
+            child: Text(
+              "STUDO",
+              style: TextStyle(
+                  color: AppColors.primarycolor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25),
+            ),
           ),
         ],
       ),

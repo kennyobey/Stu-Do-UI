@@ -21,6 +21,7 @@ dependencies:
   google_fonts: ^2.1.0
   intl: ^0.17.0
   get: ^4.1.4
+  http: ^0.13.3
   dependencies:
   flutter_custom_dialog: ^1.2.0
 
