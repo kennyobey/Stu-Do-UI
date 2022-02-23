@@ -1,22 +1,26 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:studo/services/repository/auth_repository.dart';
 import 'signup.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
 
   @override
-  VideoState createState() => VideoState();
+  SplashState createState() => SplashState();
 }
 
-class VideoState extends State<Splash> with SingleTickerProviderStateMixin {
+class SplashState extends State<Splash> with SingleTickerProviderStateMixin {
   var _visible = true;
 
+  Timer? timer;
+  final controller = Get.find<AuthenticationRepository>();
   late AnimationController animationController;
   late Animation<double> animation;
 
   startTime() async {
-    var _duration = Duration(seconds: 2);
+    var _duration = const Duration(seconds: 2);
     return Timer(_duration, navigationPage);
   }
 
@@ -28,9 +32,9 @@ class VideoState extends State<Splash> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-
+    timer = Timer(const Duration(milliseconds: 2000), () {});
     animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 2));
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
     animation =
         CurvedAnimation(parent: animationController, curve: Curves.easeOut);
 
@@ -48,34 +52,21 @@ class VideoState extends State<Splash> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Stack(
-        fit: StackFit.expand,
-        children: <Widget>[
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            mainAxisSize: MainAxisSize.min,
-            children: const <Widget>[
-              Padding(
-                padding: EdgeInsets.only(bottom: 30.0),
-                child: Text(
-                  "STUDO",
-                  style: TextStyle(
-                      color: Color.fromRGBO(25, 50, 80, 10),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25),
-                ),
-              )
-            ],
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(
+            'asset/studosreen.png',
+            width: animation.value * 250,
+            height: animation.value * 250,
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Image.asset(
-                'asset/studosreen.png',
-                width: animation.value * 250,
-                height: animation.value * 250,
-              ),
-            ],
+          const Text(
+            "STUDO",
+            style: TextStyle(
+                color: Color.fromRGBO(25, 50, 80, 10),
+                fontWeight: FontWeight.bold,
+                fontSize: 25),
           ),
         ],
       ),
