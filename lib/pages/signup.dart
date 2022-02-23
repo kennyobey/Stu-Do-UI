@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:studo/services/repository/auth_repository.dart';
 import 'package:studo/widget/app_colors.dart';
+import 'package:studo/widget/custom_textform_field.dart';
 import 'signin.dart';
 
 class SignUp extends GetView<AuthenticationRepository> {
@@ -26,7 +27,8 @@ class SignUp extends GetView<AuthenticationRepository> {
               ), // padding
               SizedBox(height: 20),
               Container(
-                padding: EdgeInsets.only(bottom: 40),
+                height: MediaQuery.of(context).size.height * 0.8,
+                padding: EdgeInsets.only(bottom: 40, left: 20, right: 20),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
@@ -44,26 +46,54 @@ class SignUp extends GetView<AuthenticationRepository> {
                           fontSize: 20),
                     ),
                     SizedBox(
-                      height: 10,
+                      height: 20,
                     ),
-                    name('Name'),
+                    CustomTextForField(
+                      hint: 'First Name',
+                    ),
                     SizedBox(
                       height: 10,
                     ),
-                    name("E-mail"),
+                    CustomTextForField(
+                      hint: 'Last Name',
+                    ),
                     SizedBox(
                       height: 10,
                     ),
-                    password("Password"),
+                    CustomTextForField(
+                      hint: 'Email',
+                    ),
                     SizedBox(
                       height: 10,
                     ),
-                    password("Confirm Password"),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: CustomTextForField(
+                            hint: 'Department',
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                          child: CustomTextForField(
+                            hint: 'Faculty',
+                          ),
+                        ),
+                      ],
+                    ),
                     SizedBox(
-                      height: 30,
+                      height: 10,
+                    ),
+                    CustomTextForField(
+                      hint: 'Password',
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                     signup(context),
-                    Spacer(),
+                    // Spacer(),
                     haveaccount()
                   ],
                 ),
