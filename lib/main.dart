@@ -1,13 +1,33 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:studo/widget/custom_theme.dart';
 import 'pages/splashscreen.dart';
+import 'services/app_binding/appbinding.dart';
 
-void main() => runApp(MaterialApp(
-      title: "Todo",
-      debugShowCheckedModeBanner: false,
-      home: Splash(),
-    ));
+void main() => runApp(const MyApp());
 
-// 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
- 
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+      print(constraints.maxHeight);
+      final customTheme = CustomTheme(constraints);
+      return GetMaterialApp(
+        initialBinding: AppBinding(),
+        theme: ThemeData(
+          textTheme: customTheme.nunito(),
+          elevatedButtonTheme: customTheme.elevatedButtonTheme(),
+          outlinedButtonTheme: customTheme.outlinedButtonTheme(),
+          pageTransitionsTheme: const PageTransitionsTheme(builders: {
+            TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
+            TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+          }),
+        ),
+        home: const Splash(),
+      );
+    });
+  }
+}

@@ -1,9 +1,5 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'dart:async';
-// import 'package:custom_dialog_flutter_demo/dialogs.dart';
 import 'package:flutter/material.dart';
-
 import 'signup.dart';
 
 class Splash extends StatefulWidget {

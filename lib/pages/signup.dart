@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:studo/widget/app_colors.dart';
 
 import 'signin.dart';
 
@@ -101,7 +102,7 @@ Widget name(String name) {
             labelStyle: TextStyle(
               fontFamily: 'Montserrat',
               fontWeight: FontWeight.w400,
-              color: Color.fromRGBO(25, 50, 80, 10),
+              color: AppColors.primarycolor,
               fontSize: 15,
             ),
             focusedBorder: UnderlineInputBorder(
