@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:studo/Screens/calenderview.dart';
-import 'package:studo/Screens/homepage.dart';
+import 'package:studo/pages/calenderview.dart';
+import 'package:studo/pages/homepage.dart';
 
 import 'Alert_dialogue/alertdialogue.dart';
 

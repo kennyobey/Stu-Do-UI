@@ -1,10 +1,10 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:studo/Screens/bottomnav.dart';
-import 'package:studo/Screens/homepage.dart';
 
-class SignIn extends StatelessWidget {
+import 'signin.dart';
+
+class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +30,7 @@ class SignIn extends StatelessWidget {
                             height: 10,
                           ),
                           Text(
-                            "Login",
+                            "Sign Up",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 30,
@@ -53,12 +53,16 @@ class SignIn extends StatelessWidget {
                       children: [
                         SizedBox(height: 30),
                         Text(
-                          "Welcome back!",
+                          "Let's Get Started",
                           style: TextStyle(
                               color: Color.fromRGBO(25, 50, 80, 10),
                               fontWeight: FontWeight.bold,
                               fontSize: 25),
                         ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        name('Name'),
                         SizedBox(
                           height: 10,
                         ),
@@ -68,10 +72,12 @@ class SignIn extends StatelessWidget {
                         ),
                         password("Password"),
                         SizedBox(
-                          height: 20,
+                          height: 10,
                         ),
-                        forgot(),
-                        SizedBox(height: 40),
+                        password("Confirm Password"),
+                        SizedBox(
+                          height: 30,
+                        ),
                         signup(context),
                         Spacer(),
                         haveaccount()
@@ -141,12 +147,12 @@ Widget signup(BuildContext context) {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => MyNavPage()),
+              MaterialPageRoute(builder: (context) => SignIn()),
             );
           },
           child: InkWell(
             child: Text(
-              "Login",
+              "Sign Up",
               style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 20,
@@ -170,30 +176,13 @@ Widget haveaccount() {
       child: Center(
         child: InkWell(
           child: Text(
-            "Dont have an account yet? signup",
+            "Already have an account? Login",
             style: TextStyle(
                 fontWeight: FontWeight.w300,
                 fontSize: 15,
                 color: Colors.white,
                 fontFamily: "Montserrat"),
           ),
-        ),
-      ),
-    ),
-  );
-}
-
-Widget forgot() {
-  return Container(
-    alignment: Alignment(1.0, 0.0),
-    padding: EdgeInsets.only(top: 5.0, left: 10.0, right: 20),
-    child: InkWell(
-      child: Text(
-        "Forgot Password?",
-        style: TextStyle(
-          fontWeight: FontWeight.w300,
-          fontSize: 10,
-          color: Color.fromRGBO(25, 50, 80, 10),
         ),
       ),
     ),

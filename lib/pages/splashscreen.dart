@@ -3,9 +3,8 @@
 import 'dart:async';
 // import 'package:custom_dialog_flutter_demo/dialogs.dart';
 import 'package:flutter/material.dart';
-import 'package:studo/Screens/bottomnav.dart';
-import 'package:studo/Screens/homepage.dart';
-import 'package:studo/Screens/signup.dart';
+
+import 'signup.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
