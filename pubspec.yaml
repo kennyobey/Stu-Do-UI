@@ -18,7 +18,7 @@ dependencies:
   syncfusion_flutter_calendar: ^19.3.48
   shared_preferences: ^2.0.6
   lottie: 1.1.0
-  google_fonts: ^2.1.0
+  google_fonts: 2.1.0
   intl: ^0.17.0
   get: ^4.1.4
   http: ^0.13.3

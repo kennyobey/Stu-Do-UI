@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:studo/widget/custom_textform_field.dart';
 
 import 'bottomnav.dart';
 
@@ -43,6 +44,8 @@ class SignIn extends StatelessWidget {
                 ), // padding
                 Expanded(
                   child: Container(
+                    height: MediaQuery.of(context).size.height * 0.8,
+                    padding: EdgeInsets.only(bottom: 40, left: 20, right: 20),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
@@ -62,13 +65,17 @@ class SignIn extends StatelessWidget {
                         SizedBox(
                           height: 10,
                         ),
-                        name("E-mail"),
+                        CustomTextForField(
+                          hint: 'Email',
+                        ),
                         SizedBox(
                           height: 10,
                         ),
-                        password("Password"),
+                        CustomTextForField(
+                          hint: 'Password',
+                        ),
                         SizedBox(
-                          height: 20,
+                          height: 10,
                         ),
                         forgot(),
                         SizedBox(height: 40),
