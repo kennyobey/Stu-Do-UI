@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Alert_dialogue/constant.dart';
+import 'alert_dialogue/Alert pages/description_details.dart';
 
 class TodoHomePage extends StatefulWidget {
   @override
@@ -268,53 +269,76 @@ class _MyTodoHomePage extends State<TodoHomePage> {
                                                   shrinkWrap: true,
                                                   itemBuilder:
                                                       (context, position) {
-                                                    return Card(
-                                                      color: Color.fromRGBO(
-                                                          240, 244, 245, 10),
-                                                      child: ListTile(
-                                                        contentPadding:
-                                                            EdgeInsets.all(10),
-                                                        leading: Image.asset(
-                                                          "asset/Rectangle green.png",
-                                                          height: 90,
-                                                          width: 10,
-                                                          fit: BoxFit.fill,
-                                                        ),
-                                                        title: Text(
-                                                          _item[position].title,
-                                                          style: TextStyle(
-                                                            fontSize: 15,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            color:
-                                                                Color.fromRGBO(
-                                                                    25,
-                                                                    50,
-                                                                    80,
+                                                    return GestureDetector(
+                                                      onTap: () {
+                                                        Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  RoundedAlertBox(
+                                                                      context)),
+                                                        );
+                                                      },
+                                                      child: InkWell(
+                                                        child: Card(
+                                                          color: Color.fromRGBO(
+                                                              240,
+                                                              244,
+                                                              245,
+                                                              10),
+                                                          child: ListTile(
+                                                            contentPadding:
+                                                                EdgeInsets.all(
                                                                     10),
+                                                            leading:
+                                                                Image.asset(
+                                                              "asset/Rectangle green.png",
+                                                              height: 90,
+                                                              width: 10,
+                                                              fit: BoxFit.fill,
+                                                            ),
+                                                            title: Text(
+                                                              _item[position]
+                                                                  .title,
+                                                              style: TextStyle(
+                                                                fontSize: 15,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                color: Color
+                                                                    .fromRGBO(
+                                                                        25,
+                                                                        50,
+                                                                        80,
+                                                                        10),
+                                                              ),
+                                                            ),
+                                                            subtitle: Text(
+                                                              _item[position]
+                                                                  .time,
+                                                              style: TextStyle(
+                                                                fontSize: 10,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w300,
+                                                                color: Color
+                                                                    .fromRGBO(
+                                                                        25,
+                                                                        50,
+                                                                        80,
+                                                                        10),
+                                                              ),
+                                                            ),
+                                                            trailing: Text(
+                                                              _item[position]
+                                                                  .date,
+                                                            ),
+                                                            // trailing: Icon(
+                                                            //   Icons.circle,
+                                                            //   color: Colors.yellow,
+                                                            // ),
                                                           ),
                                                         ),
-                                                        subtitle: Text(
-                                                          _item[position].time,
-                                                          style: TextStyle(
-                                                            fontSize: 10,
-                                                            fontWeight:
-                                                                FontWeight.w300,
-                                                            color:
-                                                                Color.fromRGBO(
-                                                                    25,
-                                                                    50,
-                                                                    80,
-                                                                    10),
-                                                          ),
-                                                        ),
-                                                        trailing: Text(
-                                                          _item[position].date,
-                                                        ),
-                                                        // trailing: Icon(
-                                                        //   Icons.circle,
-                                                        //   color: Colors.yellow,
-                                                        // ),
                                                       ),
                                                     );
                                                   },

@@ -60,7 +60,7 @@ class SignIn extends StatelessWidget {
                           style: TextStyle(
                               color: Color.fromRGBO(25, 50, 80, 10),
                               fontWeight: FontWeight.bold,
-                              fontSize: 25),
+                              fontSize: 20),
                         ),
                         SizedBox(
                           height: 10,
