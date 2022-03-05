@@ -34,185 +34,195 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
   get dropdownItems => null;
   @override
   Widget build(BuildContext context) {
-    return Dialog(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(Constants.padding),
-      ),
-      elevation: 0,
-      backgroundColor: Colors.transparent,
-      child: contentBox(context),
-    );
-  }
-
-  contentBox(context) {
-    return MaterialApp(
-        home: DefaultTabController(
-            length: 3,
-            child: Scaffold(
-                resizeToAvoidBottomInset: true,
-                appBar: AppBar(
-                  backgroundColor: const Color.fromRGBO(25, 50, 80, 10),
-                  bottom: const TabBar(
-                    tabs: [
-                      Tab(
-                        child: Text(
-                          "Details",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15),
-                        ),
-                      ),
-                      Tab(
-                        child: Text(
-                          "Tags",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15),
-                        ),
-                      ),
-                      Tab(
-                        child: Text(
-                          "Deadline",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-
-                // Details Tab
-                body: TabBarView(children: [
-                  SingleChildScrollView(
-                    child: Container(
-                      padding: const EdgeInsets.all(10),
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            const TextField(
-                              decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                labelText: 'Title',
-                                isDense: true, // Added this
-                                contentPadding: EdgeInsets.all(8), // Added this
+    return AlertDialog(
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(32.0))),
+        contentPadding: const EdgeInsets.only(top: 10.0),
+        content: Container(
+            width: 300.0,
+            child: MaterialApp(
+                home: DefaultTabController(
+                    length: 3,
+                    child: Scaffold(
+                        resizeToAvoidBottomInset: true,
+                        appBar: AppBar(
+                          backgroundColor: const Color.fromRGBO(25, 50, 80, 10),
+                          bottom: const TabBar(
+                            tabs: [
+                              Tab(
+                                child: Text(
+                                  "Details",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15),
+                                ),
                               ),
-                            ),
-                            _buildTextField(),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [_button2("Cancel"), _button2("Save")],
-                            )
-                          ]),
-                    ),
-                  ),
+                              Tab(
+                                child: Text(
+                                  "Tags",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15),
+                                ),
+                              ),
+                              Tab(
+                                child: Text(
+                                  "Deadline",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
 
-                  // Tags Tab
-                  SingleChildScrollView(
-                    child: Container(
-                        padding: const EdgeInsets.all(10),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              "Priority",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 15),
+                        // Details Tab
+                        body: TabBarView(children: [
+                          SingleChildScrollView(
+                            child: Container(
+                              padding: const EdgeInsets.all(10),
+                              child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                    const TextField(
+                                      decoration: InputDecoration(
+                                        border: OutlineInputBorder(),
+                                        labelText: 'Title',
+                                        isDense: true, // Added this
+                                        contentPadding:
+                                            EdgeInsets.all(8), // Added this
+                                      ),
+                                    ),
+                                    _buildTextField(),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      children: [
+                                        _button2("Cancel"),
+                                        _button2("Save")
+                                      ],
+                                    )
+                                  ]),
                             ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  _button2("Low"),
-                                  _button2("Medium"),
-                                  _button2("High"),
-                                ]),
-                            const Text(
-                              "Category",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 15),
-                            ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  _button2("Low"),
-                                ]),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [_button2("Cancel"), _button2("Save")],
-                            )
-                          ],
-                        )),
-                  ),
+                          ),
 
-                  //Deadline tab
-                  SingleChildScrollView(
-                      child: Container(
-                    padding: const EdgeInsets.all(10),
-                    height: 200,
-                    width: 200,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        const Text(
-                          "Date",
-                          style: TextStyle(
-                              color: Color.fromRGBO(25, 50, 80, 10),
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15),
-                        ),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              _buttonMonth(),
-                              _buttonDate(),
-                              _buttonYear()
-                            ]),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        const Text(
-                          "Time",
-                          style: TextStyle(
-                              color: Color.fromRGBO(25, 50, 80, 10),
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15),
-                        ),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              _buttonHour(),
-                              _buttonMin(),
-                              _buttonZone()
-                            ]),
-                      ],
-                    ),
-                  ))
-                ]))));
+                          // Tags Tab
+                          SingleChildScrollView(
+                            child: Container(
+                                padding: const EdgeInsets.all(10),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      "Priority",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15),
+                                    ),
+                                    const SizedBox(
+                                      height: 5,
+                                    ),
+                                    Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          _button2("Low"),
+                                          _button2("Medium"),
+                                          _button2("High"),
+                                        ]),
+                                    const Text(
+                                      "Category",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15),
+                                    ),
+                                    const SizedBox(
+                                      height: 5,
+                                    ),
+                                    Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          _button2("Low"),
+                                        ]),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      children: [
+                                        _button2("Cancel"),
+                                        _button2("Save")
+                                      ],
+                                    )
+                                  ],
+                                )),
+                          ),
+
+                          //Deadline tab
+                          SingleChildScrollView(
+                              child: Container(
+                            padding: const EdgeInsets.all(10),
+                            height: 200,
+                            width: 200,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                const Text(
+                                  "Date",
+                                  style: TextStyle(
+                                      color: Color.fromRGBO(25, 50, 80, 10),
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 15),
+                                ),
+                                Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      _buttonMonth(),
+                                      _buttonDate(),
+                                      _buttonYear()
+                                    ]),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                const Text(
+                                  "Time",
+                                  style: TextStyle(
+                                      color: Color.fromRGBO(25, 50, 80, 10),
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 15),
+                                ),
+                                Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      _buttonHour(),
+                                      _buttonMin(),
+                                      _buttonZone()
+                                    ]),
+                              ],
+                            ),
+                          ))
+                        ]))))));
   }
 }
 
