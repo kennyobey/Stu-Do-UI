@@ -37,7 +37,7 @@ class _MyNavPageState extends State<MyNavPage> {
             showDialog(
                 context: context,
                 builder: (BuildContext context) {
-                  return CustomDialogBox(
+                  return const CustomDialogBox(
                     title: "Custom Dialog Demo",
                     descriptions:
                         "Hii all this is a custom dialog in flutter and  you will be use in your flutter applications",
@@ -60,8 +60,8 @@ class _MyNavPageState extends State<MyNavPage> {
           // selectedIconTheme: IconThemeData(
           //   color: Color.fromRGBO(25, 50, 80, 10),
           // ),
-          selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
-          items: <BottomNavigationBarItem>[
+          selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+          items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.menu),
               label: '',
