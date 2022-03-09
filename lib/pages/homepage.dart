@@ -56,14 +56,32 @@ class _MyTodoHomePage extends State<TodoHomePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      child: CircleAvatar(
-                        backgroundColor: Colors.transparent,
-                        radius: Constants.avatarRadius,
-                        child: ClipRRect(
-                            borderRadius: BorderRadius.all(
-                                Radius.circular(Constants.avatarRadius)),
-                            child: Image.asset("asset/studosreen.png")),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Center(
+                      child: Column(
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: Colors.transparent,
+                            radius: Constants.avatarRadius,
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.all(
+                                    Radius.circular(Constants.avatarRadius)),
+                                child: Image.asset("asset/kenny.jpg")),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "Kehinde Obe",
+                            style: TextStyle(fontWeight: FontWeight.w700),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text("kennyobey@gmail.com")
+                        ],
                       ),
                     ),
                     SizedBox(
