@@ -36,47 +36,53 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
   Widget build(BuildContext context) {
     return AlertDialog(
         shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(32.0))),
+            borderRadius: BorderRadius.all(Radius.circular(0.0))),
         contentPadding: const EdgeInsets.only(top: 10.0),
         content: Container(
             width: 300.0,
+            height: 400.0,
             child: MaterialApp(
                 home: DefaultTabController(
                     length: 3,
                     child: Scaffold(
                         resizeToAvoidBottomInset: true,
-                        appBar: AppBar(
-                          backgroundColor: const Color.fromRGBO(25, 50, 80, 10),
-                          bottom: const TabBar(
-                            tabs: [
-                              Tab(
-                                child: Text(
-                                  "Details",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15),
+                        appBar: PreferredSize(
+                          preferredSize:
+                              Size.fromHeight(50.0), // here the desired height
+                          child: AppBar(
+                            backgroundColor:
+                                const Color.fromRGBO(25, 50, 80, 10),
+                            bottom: const TabBar(
+                              tabs: [
+                                Tab(
+                                  child: Text(
+                                    "Details",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  ),
                                 ),
-                              ),
-                              Tab(
-                                child: Text(
-                                  "Tags",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15),
+                                Tab(
+                                  child: Text(
+                                    "Tags",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  ),
                                 ),
-                              ),
-                              Tab(
-                                child: Text(
-                                  "Deadline",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15),
-                                ),
-                              )
-                            ],
+                                Tab(
+                                  child: Text(
+                                    "Deadline",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ),
 
