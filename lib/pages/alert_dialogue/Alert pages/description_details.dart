@@ -14,22 +14,7 @@ class _RoundedAlertBoxState extends State<RoundedAlertBox> {
 
   @override
   Widget build(BuildContext context) {
-    //   return Center(
-    //     child: RaisedButton(
-    //       onPressed: openAlertBox,
-    //       //color: myColor,
-    //       child: const Text(
-    //         "Open Alert Box",
-    //         style: TextStyle(color: Colors.white),
-    //       ),
-    //     ),
-    //   );
-    // }
-
-    // openAlertBox() {
-    //   return showDialog(
-    //       context: context,
-    //       builder: (BuildContext context) {
+    
     return AlertDialog(
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(32.0))),
