@@ -253,15 +253,15 @@ Widget _button2(String title) {
   return Container(
     margin: const EdgeInsets.all(2),
     padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 10),
-    child: FlatButton(
+    child: ElevatedButton(
       child: Text(
         title,
         style: const TextStyle(
             color: Colors.white, fontWeight: FontWeight.w400, fontSize: 15),
       ),
-      color: const Color.fromRGBO(25, 50, 80, 10),
-      textColor: Colors.white,
-      onPressed: () {},
+     // color: const Color.fromRGBO(25, 50, 80, 10),
+      // textColor: Colors.white,
+       onPressed: () {},
     ),
   );
 }

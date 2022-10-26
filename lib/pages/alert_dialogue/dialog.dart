@@ -19,7 +19,7 @@ class _DialogsState extends State<Dialogs> {
         automaticallyImplyLeading: false,
       ),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           onPressed: () {
             showDialog(
                 context: context,
